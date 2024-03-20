@@ -96,6 +96,7 @@ address {
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center;
+    max-width: 1440px;
 }
 
 .main-title {
@@ -126,6 +127,7 @@ address {
     min-width: 169px;
     height: 56px;
     border: none;
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-button:hover {
@@ -339,9 +341,27 @@ ul {
 
 .portfolioitem {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolioitem:hover{
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.overlayparagraph:hover{
+    transform: translateY(0%);
+}
+.overlayparagraph{
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color:#f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolioimages{
     overflow: hidden;
@@ -367,7 +387,8 @@ ul {
     color: #f4f4fd;
 }
 .headerclass {
-    border-bottom: 1px solid #e7e9fc
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .namejob {
@@ -393,7 +414,7 @@ ul {
     overflow: hidden;
 }
 .teamicon{
-    fill: transparent;
+    fill: #f4f4fd;
 }
 .socicon{
     width: 40px;
@@ -403,8 +424,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socicon:hover{
+    background-color: #404bbf;
+}
+.socicon:focus{
     background-color: #404bbf;
 }
 .teamiconlist{
@@ -420,11 +445,11 @@ ul {
     height: 112px;
     background: #f4f4fd;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.benefiticon{
-    margin-top: 24px;
-    margin-left: 100px;
-}
+
 .socmediatitle{
     font-weight: 500;
     font-size: 16px;
@@ -437,6 +462,7 @@ ul {
 }
 .containerfooter {
     display: flex;
+    align-items: baseline;
 }
 .sociconfooter{
     width: 40px;
@@ -456,15 +482,23 @@ ul {
     padding-top: 16px;
     justify-content: center;
 }
-.activelink{
+.links li:first-child{
     position: relative;
 }
-.activelink::after{
+.links li:first-child > a {
+    color: #404bbf;
+}
+
+.links li:first-child:after{
     position:absolute;
     content: '';
     border-radius: 2px;
-    width: 48px;
+    width: 100%;
     height: 4px;
     background: #404bbf;
     bottom: -1px;
+    left: 0;
+}
+.infoitem{
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
