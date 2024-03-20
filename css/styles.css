@@ -360,12 +360,14 @@ ul {
     background-color: #4d5ae5;
     height: 100%;
     width: 100%;
-    transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolioimages{
     overflow: hidden;
     position: relative;
+}
+.portfolioimages p{
+    transform: translateY(0%);
 }
 .portfolioitem:hover .overlay{
     transform: translatey(0);
@@ -463,6 +465,7 @@ ul {
 .containerfooter {
     display: flex;
     align-items: baseline;
+    margin-right: 120px;
 }
 .sociconfooter{
     width: 40px;
@@ -472,8 +475,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sociconfooter:hover{
+    background-color: #31d0aa;
+}
+.sociconfooter:focus{
     background-color: #31d0aa;
 }
 .sociconlist{
@@ -489,7 +496,7 @@ ul {
     color: #404bbf;
 }
 
-.links li:first-child:after{
+.links li:first-child::after{
     position:absolute;
     content: '';
     border-radius: 2px;
